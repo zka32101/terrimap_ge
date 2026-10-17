@@ -10,6 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.0
+  flutter_riverpod: ^2.6.1
+  app_common_kit:
+    git:
+      url: https://github.com/zka32101/app_common_kit.git
+      ref: v3.11.0
   terrimap_core:
     git:
       url: https://github.com/zka32101/terrimap_core

@@ -1,3 +1,4 @@
+import 'package:app_common_kit/app_common_kit.dart' show PurchaseSection;
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
@@ -28,6 +29,10 @@ class SettingsScreen extends StatelessWidget {
                   if (l != null) app.setLang(l);
                 },
               ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: PurchaseSection(),
             ),
             ListTile(
               title: Text(s.t('attribution')),
