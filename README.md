@@ -1,4 +1,4 @@
-# terrimap_ge — State Master – Germany（仮）
+# terrimap_de — State Master – Germany（仮）
 
 ドイツ16州の「位置・州名・州都」を覚える地図クイズ。共通基盤 [`terrimap_core`](https://github.com/zka32101/terrimap_core)（地図・出題・進捗・デイリー）の上に載せたアプリ。
 
@@ -12,7 +12,7 @@
 
 ## 未実装・未決
 - 課金・広告・同意（無料=最初の4〜5州+広告、買い切り=全州解放）。`app_common_kit` の再利用範囲を確認してから
-- アプリ名・bundle ID（現在は仮の `dev.terrimap.terrimap_ge`）・価格・無料州の選定
+- アプリ名・bundle ID（現在は仮の `dev.terrimap.terrimap_de`）・価格・無料州の選定
 - 都市州（ベルリン・ブレーメン・ハンブルク）の実機タップ確認
 - ストア資料、アイコン、スプラッシュ
 

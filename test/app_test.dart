@@ -5,9 +5,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:terrimap_core/pack/pack_validator.dart';
 import 'package:terrimap_core/quiz/quiz_engine.dart';
-import 'package:terrimap_ge/app_state.dart';
-import 'package:terrimap_ge/main.dart';
-import 'package:terrimap_ge/screens/quiz_screen.dart';
+import 'package:terrimap_de/app_state.dart';
+import 'package:terrimap_de/main.dart';
+import 'package:terrimap_de/screens/quiz_screen.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
