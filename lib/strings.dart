@@ -1,3 +1,4 @@
+import 'package:app_common_kit/app_common_kit.dart' show KitStrings;
 import 'package:terrimap_core/pack/region_pack.dart';
 
 /// 画面の文言(英語・ドイツ語)と、packからの地域名・州都名の引き当て。
@@ -36,6 +37,13 @@ class Strings {
       'explorer': 'Explorer',
       'expert': 'Expert',
       'master': 'Master',
+      'locked': 'Locked',
+      'unlockTitle': 'Unlock all 16 states',
+      'unlockBody': 'Play every state and remove ads with a one-time purchase. No subscription.',
+      'unlockButton': 'Unlock',
+      'restore': 'Restore purchases',
+      'notNow': 'Not now',
+      'freeStates': 'Free states',
     },
     'de': {
       'appTitle': 'Bundesländer-Meister',
@@ -64,8 +72,32 @@ class Strings {
       'explorer': 'Entdecker',
       'expert': 'Experte',
       'master': 'Meister',
+      'locked': 'Gesperrt',
+      'unlockTitle': 'Alle 16 Bundesländer freischalten',
+      'unlockBody': 'Alle Bundesländer spielen und Werbung entfernen – einmaliger Kauf, kein Abo.',
+      'unlockButton': 'Freischalten',
+      'restore': 'Käufe wiederherstellen',
+      'notNow': 'Nicht jetzt',
+      'freeStates': 'Kostenlose Bundesländer',
     },
   };
+
+  /// キット(購入欄)の文言。内蔵にないドイツ語は、英語を土台に購入まわりだけ訳す。
+  static final KitStrings kitDe = KitStrings.en.copyWith(
+    languageCode: 'de',
+    purchaseTitle: 'Kauf',
+    purchasedPremium: 'Alle Bundesländer freigeschaltet – ohne Werbung',
+    purchasedNoAds: 'Werbefrei',
+    purchaseRestore: 'Käufe wiederherstellen',
+    purchaseSuccess: 'Vielen Dank! Alles ist freigeschaltet.',
+    purchaseCancelled: 'Kauf abgebrochen.',
+    purchaseBlocked: 'Kauf nicht möglich.',
+    purchaseFailed: 'Der Kauf ist fehlgeschlagen. Bitte versuche es später erneut.',
+    restoreDone: 'Käufe wiederhergestellt.',
+    restoreNone: 'Keine Käufe gefunden.',
+  );
+
+  KitStrings get kit => lang == 'de' ? kitDe : KitStrings.en;
 
   String t(String key) => _ui[lang]?[key] ?? _ui['en']![key] ?? key;
 

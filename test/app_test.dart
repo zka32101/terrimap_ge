@@ -1,12 +1,15 @@
 import 'dart:io';
 
+import 'package:app_common_kit/app_common_kit.dart' hide SettingsScreen;
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:terrimap_core/pack/pack_validator.dart';
 import 'package:terrimap_core/quiz/quiz_engine.dart';
 import 'package:terrimap_de/app_state.dart';
 import 'package:terrimap_de/main.dart';
+import 'package:terrimap_de/monetization.dart';
 import 'package:terrimap_de/screens/quiz_screen.dart';
 
 void main() {
@@ -51,7 +54,13 @@ void main() {
   testWidgets('ホーム→クイズ: ホームが表示され、クイズ画面に進める', (t) async {
     final app = await t.runAsync(AppState.load) as AppState;
     await app.setLang('en');
-    await t.pumpWidget(TerrimapApp(app: app));
+    await t.pumpWidget(ProviderScope(
+      overrides: [
+        entitlementServiceProvider.overrideWithValue(Monetization.fakeEntitlement()),
+        optionalAdGateProvider.overrideWithValue(null),
+      ],
+      child: TerrimapApp(app: app),
+    ));
     await t.pump();
     expect(find.text('State Master – Germany'), findsOneWidget);
     expect(find.text('0 / 16'), findsOneWidget);
