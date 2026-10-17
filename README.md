@@ -29,3 +29,8 @@
 ## データ
 `packs/de` は `terrimap_core` が正本。更新は `tools/sync_pack.sh [コアのパス]`（検証つき）。
 出典: Made with Natural Earth (naturalearthdata.com)（設定画面に表示）。
+
+## アイコン
+`assets/icon/app_icon.png`（1024×1024）は `terrimap_core` の `tools/make_icon.py de` で生成（設計: `terrimap_core/docs/terrimap_icon_design_v0_1.md`）。Android・iOS のアイコンは `dart run flutter_launcher_icons` で作る。
+- 色は仮。提出前にアイコン規定（安全領域など）とストア内での見分けやすさを確認する
+- `flutter_launcher_icons` は `project.pbxproj` の `ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS` を `AppIcon` に書き換えるため、実行後はその差分を戻す（`YES` のまま）
