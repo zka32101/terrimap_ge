@@ -5,6 +5,7 @@ import 'boss_intro_card.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:terrimap_core/battle/battle_engine.dart';
+import 'package:terrimap_core/battle/invite.dart';
 import 'package:terrimap_core/battle_ui/art_set.dart';
 import 'package:terrimap_core/battle/daily_battle.dart';
 import 'package:terrimap_core/battle/replay.dart';
@@ -260,7 +261,13 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
             TextButton(
               key: const ValueKey('share-challenge'),
               onPressed: () => _copy(_replay!.toShareCode(), ui.t('daily.challenge')),
-              child: Text(ui.t('daily.challenge')),
+              child: Text(ui.t('invite.replayCode')),
+            ),
+          if (_replay != null)
+            TextButton(
+              key: const ValueKey('share-invite'),
+              onPressed: () => _copy(widget.app.inviteText(Invite.fromReplay(_replay!)), ui.t('invite.copied')),
+              child: Text(ui.t('invite.title')),
             ),
           TextButton(
             onPressed: () {
