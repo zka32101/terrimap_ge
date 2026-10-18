@@ -1,3 +1,4 @@
+import 'dart:ui' show Locale;
 import 'package:app_common_kit/app_common_kit.dart' show KitStrings;
 import 'package:terrimap_core/pack/region_pack.dart';
 
@@ -105,7 +106,12 @@ class Strings {
     restoreNone: 'Keine Käufe gefunden.',
   );
 
-  KitStrings get kit => lang == 'de' ? kitDe : KitStrings.en;
+  /// キットの部品の文言。キットが内蔵する言語（日本語・韓国語・中国語・英語）はそれを、ドイツ語はアプリの訳を、ほかは英語を使う。
+  KitStrings get kit => switch (lang) {
+        'de' => kitDe,
+        'ja' || 'ko' || 'zh' || 'en' => KitStrings.forLocale(Locale(lang)),
+        _ => KitStrings.en,
+      };
 
   String t(String key) => _ui[lang]?[key] ?? _ui['en']![key] ?? key;
 
