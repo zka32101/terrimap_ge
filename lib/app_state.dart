@@ -5,6 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 import 'package:terrimap_core/battle/battle_progress.dart';
+import 'package:terrimap_core/battle/review.dart';
+import 'package:terrimap_core/daily/daily_streak.dart';
 import 'package:terrimap_core/battle_ui/art_set.dart';
 import 'package:terrimap_core/battle/replay.dart';
 import 'package:terrimap_core/battle/difficulty.dart';
@@ -21,6 +23,7 @@ const _langKey = 'lang';
 const _assistKey = 'quiz_assist';
 const _battleKey = 'battle_progress_v1';
 const _dailyKey = 'daily_battle_v1';
+const _streakKey = 'daily_streak_v1';
 
 /// アプリ全体の状態: pack・進捗(端末に保存)・表示言語。
 class AppState extends ChangeNotifier {
@@ -122,6 +125,20 @@ class AppState extends ChangeNotifier {
 
   Replay? dailyReplay(String date) => _daily[date];
 
+  /// 毎日のバトルの連続記録（終えた日を数える。勝敗は問わない）。
+  DailyStreak get streak {
+    final raw = prefs.getString(_streakKey);
+    if (raw == null) return const DailyStreak();
+    try {
+      return DailyStreak.fromJson(raw);
+    } catch (_) {
+      return const DailyStreak();
+    }
+  }
+
+  /// 復習: 間違えた州がバトルのクイズで出やすくなる重み。
+  Map<String, double> get reviewWeights => battleReviewWeights(progress);
+
   Future<void> saveDaily(String date, Replay r) async {
     final all = _daily..[date] = r;
     final keys = all.keys.toList()..sort();
@@ -129,6 +146,7 @@ class AppState extends ChangeNotifier {
       all.remove(k);
     }
     await prefs.setString(_dailyKey, jsonEncode({for (final e in all.entries) e.key: e.value.toJsonString()}));
+    await prefs.setString(_streakKey, streak.record(date).toJson());
     notifyListeners();
   }
 
