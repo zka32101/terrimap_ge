@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:terrimap_core/battle/battle_engine.dart';
+import 'package:terrimap_core/battle_ui/art_set.dart';
 import 'package:terrimap_core/battle/daily_battle.dart';
 import 'package:terrimap_core/battle/replay.dart';
 import 'package:terrimap_core/battle/difficulty.dart';
@@ -38,6 +39,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
   BattleEvent? _lastEvent;
   String _message = '';
   String? _weather;
+  ArtSet? _art; // 画像（読み込み前・画像なしは図形で描く）
   bool _resultShown = false;
   Replay? _replay; // 終わったバトルの記録(今日のバトルの保存・共有に使う)
 
@@ -53,6 +55,9 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
       _session.tick(dt);
     })..start();
     _session.addListener(_onChanged);
+    widget.app.art(bossId: _stage.extraId).then((a) {
+      if (mounted) setState(() => _art = a);
+    });
   }
 
   @override
@@ -294,6 +299,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
                 selected: _session.selected,
                 selectedRange: _session.selectedFacility == null ? null : _engine.facilityStats(_session.selectedFacility!).range,
                 facilityMaxHp: _engine.maxHpOf,
+                art: _art,
                 onCellTap: _session.tapCell,
               ),
             ),

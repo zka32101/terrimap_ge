@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 import 'package:terrimap_core/battle/battle_progress.dart';
+import 'package:terrimap_core/battle_ui/art_set.dart';
 import 'package:terrimap_core/battle/replay.dart';
 import 'package:terrimap_core/battle/difficulty.dart';
 import 'package:terrimap_core/battle/grid.dart';
@@ -68,6 +69,20 @@ class AppState extends ChangeNotifier {
   String landmarkName(String? id) {
     final l = pack.facts?.landmarks.where((x) => x.id == id);
     return l == null || l.isEmpty ? '' : l.first.nameIn(_lang);
+  }
+
+  ArtSet? _artBase;
+
+  /// バトル画面の画像（`assets/art/`）。画像が無いものは図形で描かれる。読み込みは初回だけ。
+  /// [bossId] はエクストラの id（ボスの画像を選ぶ）。
+  Future<ArtSet> art({String? bossId}) async {
+    _artBase ??= await ArtSet.load(
+      rootBundle,
+      facilitySkins: {for (final e in (pack.profile?.facilitySkins ?? const {}).entries) e.key: e.value.skin},
+      enemySkins: {for (final e in (pack.profile?.enemySkins ?? const {}).entries) e.key: e.value.skin},
+    );
+    final b = _artBase!;
+    return ArtSet(images: b.images, facilitySkins: b.facilitySkins, enemySkins: b.enemySkins, bossId: bossId);
   }
 
   /// バトル画面の文言（その言語になければ英語）。
