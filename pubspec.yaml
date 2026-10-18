@@ -39,5 +39,6 @@ flutter:
     - packs/de/pack.json
     - packs/de/regions.json
     - packs/de/geo.geojson
+    - packs/de/profile.json
     - packs/de/strings/en.json
     - packs/de/strings/de.json

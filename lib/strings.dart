@@ -44,6 +44,8 @@ class Strings {
       'restore': 'Restore purchases',
       'notNow': 'Not now',
       'freeStates': 'Free states',
+      'battle': 'Battle',
+      'battleSubtitle': 'Defend the state capital',
     },
     'de': {
       'appTitle': 'Bundesländer-Meister',
@@ -79,6 +81,8 @@ class Strings {
       'restore': 'Käufe wiederherstellen',
       'notNow': 'Nicht jetzt',
       'freeStates': 'Kostenlose Bundesländer',
+      'battle': 'Schlacht',
+      'battleSubtitle': 'Verteidige die Hauptstadt',
     },
   };
 
