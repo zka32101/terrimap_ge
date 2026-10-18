@@ -79,6 +79,8 @@ class _QuizScreenState extends State<QuizScreen> {
         return s.t('silhouette');
       case QuestionType.neighborOf:
         return '${s.t('neighborOf')}\n${s.regionName(q.targetId)}';
+      case QuestionType.landmarkOf:
+        return '${s.t('landmarkOf')}\n${widget.app.landmarkName(q.subjectId)}';
     }
   }
 
@@ -101,6 +103,11 @@ class _QuizScreenState extends State<QuizScreen> {
         return RegionMapView(
           pack: pack,
           colorOf: (id) => id == q.targetId ? const Color(0xFFFFB300) : const Color(0xFFECEFF1),
+        );
+      case QuestionType.landmarkOf:
+        return RegionMapView(
+          pack: pack,
+          colorOf: (id) => _done && id == q.correctId ? const Color(0xFF66BB6A) : const Color(0xFFECEFF1),
         );
       case QuestionType.silhouette:
         return RegionSilhouette(pack: pack, regionId: q.targetId);
