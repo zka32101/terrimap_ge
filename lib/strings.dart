@@ -104,6 +104,10 @@ class Strings {
     purchaseFailed: 'Der Kauf ist fehlgeschlagen. Bitte versuche es später erneut.',
     restoreDone: 'Käufe wiederhergestellt.',
     restoreNone: 'Keine Käufe gefunden.',
+    reviewEnjoyTitle: 'Gefällt dir die App?',
+    reviewYes: 'Ja',
+    reviewNo: 'Nicht so',
+    reviewLater: 'Später',
   );
 
   /// キットの部品の文言。キットが内蔵する言語（日本語・韓国語・中国語・英語）はそれを、ドイツ語はアプリの訳を、ほかは英語を使う。
