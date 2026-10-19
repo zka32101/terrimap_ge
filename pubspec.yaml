@@ -21,6 +21,8 @@ dependencies:
       url: https://github.com/zka32101/terrimap_core
       ref: main
   in_app_review: ^2.0.12
+  audioplayers: ^6.1.0
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:
@@ -50,3 +52,4 @@ flutter:
     - assets/art/enemies/
     - assets/art/bosses/
     - assets/art/landmarks/
+    - assets/sound/
