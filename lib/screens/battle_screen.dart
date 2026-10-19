@@ -14,6 +14,7 @@ import 'package:terrimap_core/battle/difficulty.dart';
 import 'package:terrimap_core/battle/grid.dart';
 import 'package:terrimap_core/battle/stage.dart';
 import 'package:terrimap_core/battle/stage_generator.dart';
+import 'package:terrimap_core/battle/tutorial.dart';
 import 'package:terrimap_core/battle/weekly_battle.dart';
 import 'package:terrimap_core/battle_ui/battle_session.dart';
 import 'package:terrimap_core/battle_ui/battle_view.dart';
@@ -52,6 +53,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
   List<String> _newCards = const []; // この勝利で集まった名所カード
   ArtSet? _art; // 画像（読み込み前・画像なしは図形で描く）
   bool _resultShown = false;
+  late bool _tutorial = !widget.app.tutorialDone; // 初回のバトルの案内（終えるかスキップするまで）
   Replay? _replay; // 終わったバトルの記録(今日のバトルの保存・共有に使う)
 
   BattleEngine get _engine => _session.engine;
@@ -92,6 +94,11 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
       _lastEvent = log.first;
     }
     if (mounted) setState(() {});
+    if (_tutorial && Tutorial.finished(_session.state, skillReady: _session.skillChoices.isNotEmpty)) {
+      _tutorial = false;
+      widget.app.setTutorialDone(true);
+      _toast(_ui.t('tutorial.done'));
+    }
     if (_session.isOver && !_resultShown) {
       _resultShown = true;
       if (_session.won) {
@@ -333,6 +340,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
           _hud(st),
           if (_message.isNotEmpty)
             Padding(padding: const EdgeInsets.symmetric(horizontal: 12), child: Text(_message, style: Theme.of(context).textTheme.bodySmall)),
+          if (_tutorial) _tutorialHint(st),
           Expanded(
             child: Stack(children: [
               Padding(
@@ -353,6 +361,33 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
             ]),
           ),
           _panel(st),
+        ]),
+      ),
+    );
+  }
+
+  /// 初回のバトルの案内。画面を止めず、いまやることを短く出す。
+  Widget _tutorialHint(BattleState st) {
+    final step = Tutorial.stepFor(st, selecting: _session.selected != null && _session.selectedFacility == null, skillReady: _session.skillChoices.isNotEmpty);
+    if (step == null) return const SizedBox.shrink();
+    final ui = _ui;
+    return Card(
+      key: const ValueKey('tutorial-hint'),
+      margin: const EdgeInsets.fromLTRB(12, 6, 12, 0),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(12, 6, 4, 6),
+        child: Row(children: [
+          const Icon(Icons.lightbulb_outline, size: 20),
+          const SizedBox(width: 8),
+          Expanded(child: Text(ui.t('tutorial.${step.name}'), key: ValueKey('tutorial-${step.name}'))),
+          TextButton(
+            key: const ValueKey('tutorial-skip'),
+            onPressed: () {
+              widget.app.setTutorialDone(true);
+              setState(() => _tutorial = false);
+            },
+            child: Text(ui.t('tutorial.skip')),
+          ),
         ]),
       ),
     );
