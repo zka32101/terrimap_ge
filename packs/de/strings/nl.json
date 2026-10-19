@@ -1,0 +1,38 @@
+{
+ "regions": {
+  "DE-BB": "Brandenburg",
+  "DE-BE": "Berlijn",
+  "DE-BW": "Baden-Württemberg",
+  "DE-BY": "Beieren",
+  "DE-HB": "Bremen",
+  "DE-HE": "Hessen",
+  "DE-HH": "Hamburg",
+  "DE-MV": "Mecklenburg-Voor-Pommeren",
+  "DE-NI": "Nedersaksen",
+  "DE-NW": "Noordrijn-Westfalen",
+  "DE-RP": "Rijnland-Palts",
+  "DE-SH": "Sleeswijk-Holstein",
+  "DE-SL": "Saarland",
+  "DE-SN": "Saksen",
+  "DE-ST": "Saksen-Anhalt",
+  "DE-TH": "Thüringen"
+ },
+ "capitals": {
+  "cap_DE-BB": "Potsdam",
+  "cap_DE-BE": "Berlijn",
+  "cap_DE-BW": "Stuttgart",
+  "cap_DE-BY": "München",
+  "cap_DE-HB": "Bremen",
+  "cap_DE-HE": "Wiesbaden",
+  "cap_DE-HH": "Hamburg",
+  "cap_DE-MV": "Schwerin",
+  "cap_DE-NI": "Hannover",
+  "cap_DE-NW": "Düsseldorf",
+  "cap_DE-RP": "Mainz",
+  "cap_DE-SH": "Kiel",
+  "cap_DE-SL": "Saarbrücken",
+  "cap_DE-SN": "Dresden",
+  "cap_DE-ST": "Maagdenburg",
+  "cap_DE-TH": "Erfurt"
+ }
+}

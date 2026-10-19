@@ -7,7 +7,15 @@
    "name": {
     "en": "Heidelberg Castle",
     "de": "Heidelberger Schloss",
-    "ja": "ハイデルベルク城"
+    "ja": "ハイデルベルク城",
+    "fr": "Château de Heidelberg",
+    "es": "Castillo de Heidelberg",
+    "it": "Castello di Heidelberg",
+    "pt": "Castelo de Heidelberg",
+    "nl": "Slot Heidelberg",
+    "tr": "Heidelberg Şatosu",
+    "ko": "하이델베르크 성",
+    "zh": "海德堡城堡"
    },
    "use": true,
    "check": "unchecked",
@@ -19,7 +27,15 @@
    "name": {
     "en": "Europa-Park (Rust)",
     "de": "Europa-Park (Rust)",
-    "ja": "ヨーロッパ・パーク（ルスト）"
+    "ja": "ヨーロッパ・パーク（ルスト）",
+    "fr": "Europa-Park (Rust)",
+    "es": "Europa-Park (Rust)",
+    "it": "Europa-Park (Rust)",
+    "pt": "Europa-Park (Rust)",
+    "nl": "Europa-Park (Rust)",
+    "tr": "Europa-Park (Rust)",
+    "ko": "오이로파파크 (루스트)",
+    "zh": "欧洲公园（拉斯特）"
    },
    "use": true,
    "check": "unchecked",
@@ -31,7 +47,15 @@
    "name": {
     "en": "Neuschwanstein Castle",
     "de": "Schloss Neuschwanstein",
-    "ja": "ノイシュヴァンシュタイン城"
+    "ja": "ノイシュヴァンシュタイン城",
+    "fr": "Château de Neuschwanstein",
+    "es": "Castillo de Neuschwanstein",
+    "it": "Castello di Neuschwanstein",
+    "pt": "Castelo de Neuschwanstein",
+    "nl": "Slot Neuschwanstein",
+    "tr": "Neuschwanstein Şatosu",
+    "ko": "노이슈반슈타인 성",
+    "zh": "新天鹅堡"
    },
    "use": true,
    "check": "unchecked",
@@ -43,7 +67,15 @@
    "name": {
     "en": "Zugspitze (highest mountain in Germany)",
     "de": "Zugspitze (höchster Berg Deutschlands)",
-    "ja": "ツークシュピッツェ（ドイツ最高峰）"
+    "ja": "ツークシュピッツェ（ドイツ最高峰）",
+    "fr": "Zugspitze (plus haute montagne d'Allemagne)",
+    "es": "Zugspitze (la montaña más alta de Alemania)",
+    "it": "Zugspitze (la montagna più alta della Germania)",
+    "pt": "Zugspitze (a montanha mais alta da Alemanha)",
+    "nl": "Zugspitze (hoogste berg van Duitsland)",
+    "tr": "Zugspitze (Almanya'nın en yüksek dağı)",
+    "ko": "추크슈피체 (독일 최고봉)",
+    "zh": "楚格峰（德国最高峰）"
    },
    "use": true,
    "check": "unchecked",
@@ -55,7 +87,15 @@
    "name": {
     "en": "Brandenburg Gate",
     "de": "Brandenburger Tor",
-    "ja": "ブランデンブルク門"
+    "ja": "ブランデンブルク門",
+    "fr": "Porte de Brandebourg",
+    "es": "Puerta de Brandeburgo",
+    "it": "Porta di Brandeburgo",
+    "pt": "Portão de Brandemburgo",
+    "nl": "Brandenburger Tor",
+    "tr": "Brandenburg Kapısı",
+    "ko": "브란덴부르크 문",
+    "zh": "勃兰登堡门"
    },
    "use": true,
    "check": "unchecked",
@@ -67,7 +107,15 @@
    "name": {
     "en": "Reichstag building",
     "de": "Reichstagsgebäude",
-    "ja": "国会議事堂（ライヒスターク）"
+    "ja": "国会議事堂（ライヒスターク）",
+    "fr": "Reichstag",
+    "es": "Edificio del Reichstag",
+    "it": "Reichstag",
+    "pt": "Edifício do Reichstag",
+    "nl": "Rijksdaggebouw",
+    "tr": "Reichstag Binası",
+    "ko": "라이히스타크 (국회의사당)",
+    "zh": "德国国会大厦"
    },
    "use": true,
    "check": "unchecked",
@@ -79,7 +127,15 @@
    "name": {
     "en": "Sanssouci Palace (Potsdam)",
     "de": "Schloss Sanssouci (Potsdam)",
-    "ja": "サンスーシ宮殿（ポツダム）"
+    "ja": "サンスーシ宮殿（ポツダム）",
+    "fr": "Château de Sanssouci (Potsdam)",
+    "es": "Palacio de Sanssouci (Potsdam)",
+    "it": "Palazzo di Sanssouci (Potsdam)",
+    "pt": "Palácio de Sanssouci (Potsdam)",
+    "nl": "Paleis Sanssouci (Potsdam)",
+    "tr": "Sanssouci Sarayı (Potsdam)",
+    "ko": "상수시 궁전 (포츠담)",
+    "zh": "无忧宫（波茨坦）"
    },
    "use": true,
    "check": "unchecked",
@@ -91,7 +147,15 @@
    "name": {
     "en": "Roland statue of Bremen",
     "de": "Bremer Roland",
-    "ja": "ブレーメンのローラント像"
+    "ja": "ブレーメンのローラント像",
+    "fr": "Statue de Roland de Brême",
+    "es": "Estatua de Roldán de Bremen",
+    "it": "Statua di Orlando di Brema",
+    "pt": "Estátua de Roland de Bremen",
+    "nl": "Roland van Bremen",
+    "tr": "Bremen Roland Heykeli",
+    "ko": "브레멘 롤란트 상",
+    "zh": "不来梅罗兰雕像"
    },
    "use": true,
    "check": "unchecked",
@@ -103,7 +167,15 @@
    "name": {
     "en": "Elbphilharmonie",
     "de": "Elbphilharmonie",
-    "ja": "エルプフィルハーモニー"
+    "ja": "エルプフィルハーモニー",
+    "fr": "Elbphilharmonie",
+    "es": "Elbphilharmonie",
+    "it": "Elbphilharmonie",
+    "pt": "Elbphilharmonie",
+    "nl": "Elbphilharmonie",
+    "tr": "Elbphilharmonie",
+    "ko": "엘프필하모니",
+    "zh": "易北爱乐音乐厅"
    },
    "use": true,
    "check": "unchecked",
@@ -115,7 +187,15 @@
    "name": {
     "en": "Bergpark Wilhelmshöhe (Kassel)",
     "de": "Bergpark Wilhelmshöhe (Kassel)",
-    "ja": "ヴィルヘルムスヘーエ山公園（カッセル）"
+    "ja": "ヴィルヘルムスヘーエ山公園（カッセル）",
+    "fr": "Parc de Wilhelmshöhe (Cassel)",
+    "es": "Bergpark Wilhelmshöhe (Kassel)",
+    "it": "Bergpark Wilhelmshöhe (Kassel)",
+    "pt": "Bergpark Wilhelmshöhe (Kassel)",
+    "nl": "Bergpark Wilhelmshöhe (Kassel)",
+    "tr": "Bergpark Wilhelmshöhe (Kassel)",
+    "ko": "빌헬름스회에 산상공원 (카셀)",
+    "zh": "威廉山公园（卡塞尔）"
    },
    "use": true,
    "check": "unchecked",
@@ -127,7 +207,15 @@
    "name": {
     "en": "Königsstuhl chalk cliff (Rügen)",
     "de": "Königsstuhl (Rügen)",
-    "ja": "ケーニヒスシュトゥール（リューゲン島の白亜の断崖）"
+    "ja": "ケーニヒスシュトゥール（リューゲン島の白亜の断崖）",
+    "fr": "Falaise de craie Königsstuhl (Rügen)",
+    "es": "Acantilado de Königsstuhl (Rügen)",
+    "it": "Königsstuhl, scogliera di gesso (Rügen)",
+    "pt": "Falésia de giz Königsstuhl (Rügen)",
+    "nl": "Königsstuhl-krijtrots (Rügen)",
+    "tr": "Königsstuhl Tebeşir Kayalığı (Rügen)",
+    "ko": "쾨니히스슈툴 백악 절벽 (뤼겐)",
+    "zh": "国王宝座白垩岩（吕根岛）"
    },
    "use": true,
    "check": "unchecked",
@@ -139,7 +227,15 @@
    "name": {
     "en": "Hildesheim Cathedral",
     "de": "Hildesheimer Dom",
-    "ja": "ヒルデスハイム大聖堂"
+    "ja": "ヒルデスハイム大聖堂",
+    "fr": "Cathédrale de Hildesheim",
+    "es": "Catedral de Hildesheim",
+    "it": "Duomo di Hildesheim",
+    "pt": "Catedral de Hildesheim",
+    "nl": "Dom van Hildesheim",
+    "tr": "Hildesheim Katedrali",
+    "ko": "힐데스하임 대성당",
+    "zh": "希尔德斯海姆主教座堂"
    },
    "use": true,
    "check": "unchecked",
@@ -151,7 +247,15 @@
    "name": {
     "en": "Cologne Cathedral",
     "de": "Kölner Dom",
-    "ja": "ケルン大聖堂"
+    "ja": "ケルン大聖堂",
+    "fr": "Cathédrale de Cologne",
+    "es": "Catedral de Colonia",
+    "it": "Duomo di Colonia",
+    "pt": "Catedral de Colônia",
+    "nl": "Dom van Keulen",
+    "tr": "Köln Katedrali",
+    "ko": "쾰른 대성당",
+    "zh": "科隆大教堂"
    },
    "use": true,
    "check": "unchecked",
@@ -163,7 +267,15 @@
    "name": {
     "en": "Zollverein Coal Mine (Essen)",
     "de": "Zeche Zollverein (Essen)",
-    "ja": "ツォルフェライン炭鉱（エッセン）"
+    "ja": "ツォルフェライン炭鉱（エッセン）",
+    "fr": "Mine de charbon de Zollverein (Essen)",
+    "es": "Mina de carbón de Zollverein (Essen)",
+    "it": "Miniera di carbone Zollverein (Essen)",
+    "pt": "Mina de Carvão Zollverein (Essen)",
+    "nl": "Steenkoolmijn Zollverein (Essen)",
+    "tr": "Zollverein Kömür Madeni (Essen)",
+    "ko": "졸페라인 탄광 (에센)",
+    "zh": "关税同盟煤矿（埃森）"
    },
    "use": true,
    "check": "unchecked",
@@ -175,7 +287,15 @@
    "name": {
     "en": "Porta Nigra (Trier)",
     "de": "Porta Nigra (Trier)",
-    "ja": "ポルタ・ニグラ（トリーア）"
+    "ja": "ポルタ・ニグラ（トリーア）",
+    "fr": "Porta Nigra (Trèves)",
+    "es": "Porta Nigra (Tréveris)",
+    "it": "Porta Nigra (Treviri)",
+    "pt": "Porta Nigra (Trier)",
+    "nl": "Porta Nigra (Trier)",
+    "tr": "Porta Nigra (Trier)",
+    "ko": "포르타 니그라 (트리어)",
+    "zh": "黑门（特里尔）"
    },
    "use": true,
    "check": "unchecked",
@@ -187,7 +307,15 @@
    "name": {
     "en": "Saarschleife (Saar Loop)",
     "de": "Saarschleife",
-    "ja": "ザールシュライフェ（ザール川の大蛇行）"
+    "ja": "ザールシュライフェ（ザール川の大蛇行）",
+    "fr": "Saarschleife (boucle de la Sarre)",
+    "es": "Saarschleife (meandro del Sarre)",
+    "it": "Saarschleife (ansa della Saar)",
+    "pt": "Saarschleife (Meandro do Sarre)",
+    "nl": "Saarschleife (Saarlus)",
+    "tr": "Saarschleife (Saar Dirseği)",
+    "ko": "자르슐라이페 (자르강 굽이)",
+    "zh": "萨尔河环弯"
    },
    "use": true,
    "check": "unchecked",
@@ -199,7 +327,15 @@
    "name": {
     "en": "Dresden Frauenkirche",
     "de": "Dresdner Frauenkirche",
-    "ja": "ドレスデン聖母教会"
+    "ja": "ドレスデン聖母教会",
+    "fr": "Frauenkirche de Dresde",
+    "es": "Frauenkirche de Dresde",
+    "it": "Frauenkirche di Dresda",
+    "pt": "Frauenkirche de Dresden",
+    "nl": "Frauenkirche Dresden",
+    "tr": "Dresden Frauenkirche",
+    "ko": "드레스덴 프라우엔키르헤",
+    "zh": "德累斯顿圣母教堂"
    },
    "use": true,
    "check": "unchecked",
@@ -211,7 +347,15 @@
    "name": {
     "en": "Old town of Quedlinburg",
     "de": "Altstadt von Quedlinburg",
-    "ja": "クヴェトリンブルク旧市街"
+    "ja": "クヴェトリンブルク旧市街",
+    "fr": "Vieille ville de Quedlinbourg",
+    "es": "Casco antiguo de Quedlinburg",
+    "it": "Centro storico di Quedlinburg",
+    "pt": "Cidade velha de Quedlinburg",
+    "nl": "Oude stad van Quedlinburg",
+    "tr": "Quedlinburg Eski Şehri",
+    "ko": "크베들린부르크 구시가지",
+    "zh": "奎德林堡老城"
    },
    "use": true,
    "check": "unchecked",
@@ -223,7 +367,15 @@
    "name": {
     "en": "Holstentor (Lübeck)",
     "de": "Holstentor (Lübeck)",
-    "ja": "ホルステン門（リューベック）"
+    "ja": "ホルステン門（リューベック）",
+    "fr": "Holstentor (Lübeck)",
+    "es": "Holstentor (Lübeck)",
+    "it": "Holstentor (Lubecca)",
+    "pt": "Holstentor (Lübeck)",
+    "nl": "Holstentor (Lübeck)",
+    "tr": "Holstentor (Lübeck)",
+    "ko": "홀슈텐 문 (뤼베크)",
+    "zh": "荷尔斯滕门（吕贝克）"
    },
    "use": true,
    "check": "unchecked",
@@ -235,7 +387,15 @@
    "name": {
     "en": "Wartburg Castle",
     "de": "Wartburg",
-    "ja": "ヴァルトブルク城"
+    "ja": "ヴァルトブルク城",
+    "fr": "Château de la Wartburg",
+    "es": "Castillo de Wartburg",
+    "it": "Castello di Wartburg",
+    "pt": "Castelo de Wartburg",
+    "nl": "Wartburg",
+    "tr": "Wartburg Şatosu",
+    "ko": "바르트부르크 성",
+    "zh": "瓦特堡"
    },
    "use": true,
    "check": "unchecked",
