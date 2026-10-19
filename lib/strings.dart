@@ -8,7 +8,7 @@ class Strings {
   final RegionPack pack;
   Strings(this.lang, this.pack);
 
-  static const supported = ['en', 'de'];
+  static const supported = ['en', 'de', 'ja'];
 
   static const _ui = <String, Map<String, String>>{
     'en': {
@@ -94,6 +94,48 @@ class Strings {
       'freeStates': 'Kostenlose Bundesländer',
       'battle': 'Schlacht',
       'battleSubtitle': 'Verteidige die Hauptstadt',
+    },
+    'ja': {
+      'quiz': 'クイズ',
+      'daily': '今日のチャレンジ',
+      'review': 'まちがいを復習',
+      'landmarkQuiz': '名所クイズ',
+      'stats': '統計',
+      'settings': '設定',
+      'progress': '進み具合',
+      'language': '言語',
+      'attribution': 'データの出典',
+      'correct': '正解！',
+      'wrong': 'おしい！',
+      'next': '次へ',
+      'finish': '終了',
+      'result': '結果',
+      'again': 'もう一度',
+      'home': 'ホーム',
+      'share': '結果をコピー',
+      'copied': 'コピーしました',
+      'answerWas': '答え:',
+      'beginner': 'ビギナー',
+      'explorer': '探検家',
+      'expert': 'エキスパート',
+      'master': 'マスター',
+      'locked': 'ロック中',
+      'unlockBody': '買い切りで、すべての州が遊べて、広告も消えます。サブスクではありません。',
+      'unlockButton': '解放する',
+      'restore': '購入を復元',
+      'notNow': '今はしない',
+      'freeStates': '無料の州',
+      'battle': 'バトル',
+      'battleSubtitle': '州都を守ろう',
+      'locate': 'この州を地図でタップ:',
+      'nameFromMap': 'ハイライトされているのはどの州？',
+      'capitalFromName': 'この州の州都は？',
+      'nameFromCapital': 'この州都がある州は？',
+      'silhouette': 'このシルエットはどの州？',
+      'neighborOf': 'この州と接しているのはどの州？',
+      'landmarkOf': 'この名所はどの州にある？',
+      'appTitle': 'ステートマスター – ドイツ',
+      'unlockTitle': '16州をすべて解放',
     },
   };
 

@@ -6,7 +6,8 @@
    "region": "DE-BW",
    "name": {
     "en": "Heidelberg Castle",
-    "de": "Heidelberger Schloss"
+    "de": "Heidelberger Schloss",
+    "ja": "ハイデルベルク城"
    },
    "use": true,
    "check": "unchecked",
@@ -17,7 +18,8 @@
    "region": "DE-BW",
    "name": {
     "en": "Europa-Park (Rust)",
-    "de": "Europa-Park (Rust)"
+    "de": "Europa-Park (Rust)",
+    "ja": "ヨーロッパ・パーク（ルスト）"
    },
    "use": true,
    "check": "unchecked",
@@ -28,7 +30,8 @@
    "region": "DE-BY",
    "name": {
     "en": "Neuschwanstein Castle",
-    "de": "Schloss Neuschwanstein"
+    "de": "Schloss Neuschwanstein",
+    "ja": "ノイシュヴァンシュタイン城"
    },
    "use": true,
    "check": "unchecked",
@@ -39,7 +42,8 @@
    "region": "DE-BY",
    "name": {
     "en": "Zugspitze (highest mountain in Germany)",
-    "de": "Zugspitze (höchster Berg Deutschlands)"
+    "de": "Zugspitze (höchster Berg Deutschlands)",
+    "ja": "ツークシュピッツェ（ドイツ最高峰）"
    },
    "use": true,
    "check": "unchecked",
@@ -50,7 +54,8 @@
    "region": "DE-BE",
    "name": {
     "en": "Brandenburg Gate",
-    "de": "Brandenburger Tor"
+    "de": "Brandenburger Tor",
+    "ja": "ブランデンブルク門"
    },
    "use": true,
    "check": "unchecked",
@@ -61,7 +66,8 @@
    "region": "DE-BE",
    "name": {
     "en": "Reichstag building",
-    "de": "Reichstagsgebäude"
+    "de": "Reichstagsgebäude",
+    "ja": "国会議事堂（ライヒスターク）"
    },
    "use": true,
    "check": "unchecked",
@@ -72,7 +78,8 @@
    "region": "DE-BB",
    "name": {
     "en": "Sanssouci Palace (Potsdam)",
-    "de": "Schloss Sanssouci (Potsdam)"
+    "de": "Schloss Sanssouci (Potsdam)",
+    "ja": "サンスーシ宮殿（ポツダム）"
    },
    "use": true,
    "check": "unchecked",
@@ -83,7 +90,8 @@
    "region": "DE-HB",
    "name": {
     "en": "Roland statue of Bremen",
-    "de": "Bremer Roland"
+    "de": "Bremer Roland",
+    "ja": "ブレーメンのローラント像"
    },
    "use": true,
    "check": "unchecked",
@@ -94,7 +102,8 @@
    "region": "DE-HH",
    "name": {
     "en": "Elbphilharmonie",
-    "de": "Elbphilharmonie"
+    "de": "Elbphilharmonie",
+    "ja": "エルプフィルハーモニー"
    },
    "use": true,
    "check": "unchecked",
@@ -105,7 +114,8 @@
    "region": "DE-HE",
    "name": {
     "en": "Bergpark Wilhelmshöhe (Kassel)",
-    "de": "Bergpark Wilhelmshöhe (Kassel)"
+    "de": "Bergpark Wilhelmshöhe (Kassel)",
+    "ja": "ヴィルヘルムスヘーエ山公園（カッセル）"
    },
    "use": true,
    "check": "unchecked",
@@ -116,7 +126,8 @@
    "region": "DE-MV",
    "name": {
     "en": "Königsstuhl chalk cliff (Rügen)",
-    "de": "Königsstuhl (Rügen)"
+    "de": "Königsstuhl (Rügen)",
+    "ja": "ケーニヒスシュトゥール（リューゲン島の白亜の断崖）"
    },
    "use": true,
    "check": "unchecked",
@@ -127,7 +138,8 @@
    "region": "DE-NI",
    "name": {
     "en": "Hildesheim Cathedral",
-    "de": "Hildesheimer Dom"
+    "de": "Hildesheimer Dom",
+    "ja": "ヒルデスハイム大聖堂"
    },
    "use": true,
    "check": "unchecked",
@@ -138,7 +150,8 @@
    "region": "DE-NW",
    "name": {
     "en": "Cologne Cathedral",
-    "de": "Kölner Dom"
+    "de": "Kölner Dom",
+    "ja": "ケルン大聖堂"
    },
    "use": true,
    "check": "unchecked",
@@ -149,7 +162,8 @@
    "region": "DE-NW",
    "name": {
     "en": "Zollverein Coal Mine (Essen)",
-    "de": "Zeche Zollverein (Essen)"
+    "de": "Zeche Zollverein (Essen)",
+    "ja": "ツォルフェライン炭鉱（エッセン）"
    },
    "use": true,
    "check": "unchecked",
@@ -160,7 +174,8 @@
    "region": "DE-RP",
    "name": {
     "en": "Porta Nigra (Trier)",
-    "de": "Porta Nigra (Trier)"
+    "de": "Porta Nigra (Trier)",
+    "ja": "ポルタ・ニグラ（トリーア）"
    },
    "use": true,
    "check": "unchecked",
@@ -171,7 +186,8 @@
    "region": "DE-SL",
    "name": {
     "en": "Saarschleife (Saar Loop)",
-    "de": "Saarschleife"
+    "de": "Saarschleife",
+    "ja": "ザールシュライフェ（ザール川の大蛇行）"
    },
    "use": true,
    "check": "unchecked",
@@ -182,7 +198,8 @@
    "region": "DE-SN",
    "name": {
     "en": "Dresden Frauenkirche",
-    "de": "Dresdner Frauenkirche"
+    "de": "Dresdner Frauenkirche",
+    "ja": "ドレスデン聖母教会"
    },
    "use": true,
    "check": "unchecked",
@@ -193,7 +210,8 @@
    "region": "DE-ST",
    "name": {
     "en": "Old town of Quedlinburg",
-    "de": "Altstadt von Quedlinburg"
+    "de": "Altstadt von Quedlinburg",
+    "ja": "クヴェトリンブルク旧市街"
    },
    "use": true,
    "check": "unchecked",
@@ -204,7 +222,8 @@
    "region": "DE-SH",
    "name": {
     "en": "Holstentor (Lübeck)",
-    "de": "Holstentor (Lübeck)"
+    "de": "Holstentor (Lübeck)",
+    "ja": "ホルステン門（リューベック）"
    },
    "use": true,
    "check": "unchecked",
@@ -215,7 +234,8 @@
    "region": "DE-TH",
    "name": {
     "en": "Wartburg Castle",
-    "de": "Wartburg"
+    "de": "Wartburg",
+    "ja": "ヴァルトブルク城"
    },
    "use": true,
    "check": "unchecked",
