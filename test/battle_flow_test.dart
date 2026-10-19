@@ -34,7 +34,7 @@ void main() {
     expect(a.pack.profile, isNotNull);
     expect(a.pack.regions.first.neighbors, isNotEmpty);
     expect(a.ui.t('hud.wave', {'n': 1, 'total': 5}), 'Wave 1/5');
-    await a.setLang('fr'); // 翻訳がまだなくても動く
+    await a.setLang('xx'); // 翻訳がない言語でも動く（英語になる）
     expect(a.ui.t('hud.base'), 'Base');
     expect(a.ui.t('exclusive.name.automotive_works'), 'Automotive Works'); // 限定施設の名前も文言から
     expect(a.quizAssist, true);

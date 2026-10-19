@@ -1,0 +1,38 @@
+{
+ "regions": {
+  "DE-BB": "Brandemburgo",
+  "DE-BE": "Berlim",
+  "DE-BW": "Baden-Württemberg",
+  "DE-BY": "Baviera",
+  "DE-HB": "Bremen",
+  "DE-HE": "Hesse",
+  "DE-HH": "Hamburgo",
+  "DE-MV": "Mecklemburgo-Pomerânia Ocidental",
+  "DE-NI": "Baixa Saxônia",
+  "DE-NW": "Renânia do Norte-Vestfália",
+  "DE-RP": "Renânia-Palatinado",
+  "DE-SH": "Schleswig-Holstein",
+  "DE-SL": "Sarre",
+  "DE-SN": "Saxônia",
+  "DE-ST": "Saxônia-Anhalt",
+  "DE-TH": "Turíngia"
+ },
+ "capitals": {
+  "cap_DE-BB": "Potsdam",
+  "cap_DE-BE": "Berlim",
+  "cap_DE-BW": "Stuttgart",
+  "cap_DE-BY": "Munique",
+  "cap_DE-HB": "Bremen",
+  "cap_DE-HE": "Wiesbaden",
+  "cap_DE-HH": "Hamburgo",
+  "cap_DE-MV": "Schwerin",
+  "cap_DE-NI": "Hanôver",
+  "cap_DE-NW": "Düsseldorf",
+  "cap_DE-RP": "Mainz",
+  "cap_DE-SH": "Kiel",
+  "cap_DE-SL": "Saarbrücken",
+  "cap_DE-SN": "Dresden",
+  "cap_DE-ST": "Magdeburgo",
+  "cap_DE-TH": "Erfurt"
+ }
+}

@@ -48,6 +48,14 @@ flutter:
     - packs/de/profile.json
     - packs/de/facts.json
     - packs/de/strings/en.json
+    - packs/de/strings/zh.json
+    - packs/de/strings/ko.json
+    - packs/de/strings/tr.json
+    - packs/de/strings/nl.json
+    - packs/de/strings/pt.json
+    - packs/de/strings/it.json
+    - packs/de/strings/es.json
+    - packs/de/strings/fr.json
     - packs/de/strings/ja.json
     - packs/de/strings/de.json
     - assets/art/backdrops/

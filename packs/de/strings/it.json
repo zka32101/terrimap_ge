@@ -1,0 +1,38 @@
+{
+ "regions": {
+  "DE-BB": "Brandeburgo",
+  "DE-BE": "Berlino",
+  "DE-BW": "Baden-Württemberg",
+  "DE-BY": "Baviera",
+  "DE-HB": "Brema",
+  "DE-HE": "Assia",
+  "DE-HH": "Amburgo",
+  "DE-MV": "Meclemburgo-Pomerania Anteriore",
+  "DE-NI": "Bassa Sassonia",
+  "DE-NW": "Renania Settentrionale-Vestfalia",
+  "DE-RP": "Renania-Palatinato",
+  "DE-SH": "Schleswig-Holstein",
+  "DE-SL": "Saarland",
+  "DE-SN": "Sassonia",
+  "DE-ST": "Sassonia-Anhalt",
+  "DE-TH": "Turingia"
+ },
+ "capitals": {
+  "cap_DE-BB": "Potsdam",
+  "cap_DE-BE": "Berlino",
+  "cap_DE-BW": "Stoccarda",
+  "cap_DE-BY": "Monaco di Baviera",
+  "cap_DE-HB": "Brema",
+  "cap_DE-HE": "Wiesbaden",
+  "cap_DE-HH": "Amburgo",
+  "cap_DE-MV": "Schwerin",
+  "cap_DE-NI": "Annover",
+  "cap_DE-NW": "Düsseldorf",
+  "cap_DE-RP": "Magonza",
+  "cap_DE-SH": "Kiel",
+  "cap_DE-SL": "Saarbrücken",
+  "cap_DE-SN": "Dresda",
+  "cap_DE-ST": "Magdeburgo",
+  "cap_DE-TH": "Erfurt"
+ }
+}
