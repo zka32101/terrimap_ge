@@ -2,6 +2,8 @@ import 'package:app_common_kit/app_common_kit.dart' hide SettingsScreen;
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'looks.dart';
+
 /// 無料で遊べる州(16州の25%=4州)。それ以外は買い切りで解放する。
 /// 地理的に分かりやすい大きな州と、有名な都市州を1つ。
 const freeRegionIds = {'DE-BY', 'DE-NW', 'DE-BW', 'DE-BE'};
@@ -57,10 +59,17 @@ class Monetization {
             title: 'Remove ads only',
             priceString: '—',
           ),
+          EntitlementOffer(
+            id: 'looks_pack',
+            productId: looksProductId,
+            title: 'Looks pack',
+            priceString: '—',
+          ),
         ],
         grantOnPurchase: {
           unlockProductId: const EntitlementState(hasPremium: true),
           removeAdsProductId: const EntitlementState(hasNoAds: true),
+          looksProductId: const EntitlementState(extra: {looksEntitlementId}),
         },
       );
 
