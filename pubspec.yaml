@@ -69,6 +69,7 @@ flutter:
     - assets/art/enemies/
     - assets/art/exclusive/
     - assets/art/bosses/
+    - assets/art/weather/
     - assets/art/landmarks/
     - assets/sound/
 
