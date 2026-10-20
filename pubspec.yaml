@@ -52,6 +52,7 @@ flutter:
     - packs/de/geo.geojson
     - packs/de/profile.json
     - packs/de/facts.json
+    - packs/de/story.json
     - packs/de/strings/en.json
     - packs/de/strings/zh.json
     - packs/de/strings/ko.json
