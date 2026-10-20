@@ -99,6 +99,16 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
     super.dispose();
   }
 
+  /// 組み合わせボーナスが初めて効いたとき、説明を1回だけ出す。
+  void _maybeSynergyHint() {
+    if (_engine.rules < 2 || widget.app.synergyHintSeen) return;
+    final fs = _session.state.facilities;
+    if (fs.values.any((f) => BattleEngine.neighborTypes(fs, f) > 0)) {
+      widget.app.setSynergyHintSeen();
+      _toast(_ui.t('synergy.hint'));
+    }
+  }
+
   void _onChanged() {
     // 新しいイベントを文言にする
     final log = _session.log;
@@ -111,6 +121,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
       _lastEvent = log.first;
     }
     if (mounted) setState(() {});
+    _maybeSynergyHint();
     if (_tutorial && Tutorial.finished(_session.state, skillReady: _session.skillChoices.isNotEmpty)) {
       _tutorial = false;
       widget.app.setTutorialDone(true);
@@ -362,6 +373,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
                 art: _art,
                 weather: _weather,
                 fx: _session.fx,
+                synergy: _engine.rules >= 2,
                 onCellTap: _session.tapCell,
               ),
               ),
