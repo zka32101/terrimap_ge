@@ -36,6 +36,7 @@ class _ReplayScreenState extends State<ReplayScreen> with SingleTickerProviderSt
       _last = elapsed;
       _player.tick(dt);
     })..start();
+    _player.fx.enabled = widget.app.battleFx;
     _player.addListener(_onChanged);
     widget.app.art(bossId: _engine.stage.extraId).then((a) {
       if (mounted) setState(() => _art = a);
@@ -76,7 +77,7 @@ class _ReplayScreenState extends State<ReplayScreen> with SingleTickerProviderSt
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: BattleView(key: const ValueKey('replay-board'), stage: stage, state: st, facilityMaxHp: _engine.maxHpOf, art: _art),
+              child: BattleView(key: const ValueKey('replay-board'), stage: stage, state: st, facilityMaxHp: _engine.maxHpOf, art: _art, fx: _player.fx),
             ),
           ),
           if (_player.corrupt)
