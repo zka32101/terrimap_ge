@@ -278,6 +278,14 @@ void main() {
     for (final d in Difficulty.values) {
       expect(find.byKey(ValueKey('play-DE-BY-${d.name}')), findsOneWidget);
     }
+    // 解説ページへ入れる(戻ると、シートは閉じている)
+    await t.tap(find.byKey(const ValueKey('guide-DE-BY')));
+    await t.pumpAndSettle();
+    expect(find.byKey(const ValueKey('guide-blurb')), findsOneWidget);
+    Navigator.of(t.element(find.byKey(const ValueKey('guide-blurb')))).pop();
+    await t.pumpAndSettle();
+    map.onTap!('DE-BY');
+    await t.pumpAndSettle();
     await t.tap(find.byKey(const ValueKey('play-DE-BY-hard')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
