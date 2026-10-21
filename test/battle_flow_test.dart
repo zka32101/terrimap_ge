@@ -286,7 +286,7 @@ void main() {
 
   testWidgets('地図の色: 初めは薄い灰色。クリアした一番むずかしい難易度の色になる。クイズで覚えても変わらない', (t) async {
     final app = await boot(t, assist: false);
-    final map = () => t.widget<RegionMapView>(find.byType(RegionMapView));
+    RegionMapView map() => t.widget<RegionMapView>(find.byType(RegionMapView));
     expect(map().colorOf('DE-BY'), A11yPalette.clearColor(null));
     await t.runAsync(() => app.record('DE-BY', correct: true)); // クイズで覚えた
     await t.pump();
