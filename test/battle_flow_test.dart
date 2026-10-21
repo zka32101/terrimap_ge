@@ -7,7 +7,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:terrimap_core/battle/battle_engine.dart';
 import 'package:terrimap_core/battle/bot.dart';
-import 'package:terrimap_core/battle/daily_battle.dart';
 import 'package:terrimap_core/battle/replay.dart';
 import 'package:terrimap_core/battle/difficulty.dart';
 import 'package:terrimap_core/battle/grid.dart';
@@ -16,8 +15,11 @@ import 'package:terrimap_core/battle/stage_generator.dart';
 import 'package:terrimap_core/battle/weekly_battle.dart';
 import 'package:terrimap_core/battle_ui/art_set.dart';
 import 'package:terrimap_core/battle_ui/battle_view.dart';
+import 'package:terrimap_core/map/region_map_view.dart';
 import 'package:terrimap_core/quiz/quiz_engine.dart';
+import 'package:terrimap_de/a11y.dart';
 import 'package:terrimap_de/app_state.dart';
+import 'package:terrimap_de/screens/replay_screen.dart';
 import 'package:terrimap_de/screens/achievements_screen.dart';
 import 'package:terrimap_de/screens/collection_screen.dart';
 import 'package:terrimap_de/screens/quiz_screen.dart';
@@ -131,6 +133,8 @@ void main() {
     await t.tap(find.byKey(const ValueKey('battle')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
+    await t.tap(find.byKey(const ValueKey('stage-view-toggle'))); // 一覧に切り替える(地図のタップは別のテストで確かめる)
+    await t.pump();
     await t.tap(find.text(regionName));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
@@ -219,25 +223,14 @@ void main() {
     return rec.toReplay(packId: app.pack.packId, kind: StageKind.normal, stageId: id, difficulty: d);
   }
 
-  test('今日のバトルの結果は端末に保存され、古い日は消える', () async {
+  test('バトルの連続記録: 続けると増え、空くと戻り、端末に保存される。復習の重みは間違えた州が重い', () async {
     final a = await AppState.load();
-    final r = botReplay(a, 'DE-BY', Difficulty.easy);
-    await a.saveDaily('2026-10-01', r);
-    expect((await AppState.load()).dailyReplay('2026-10-01')!.result, r.result);
-    for (var d = 2; d <= 10; d++) {
-      await a.saveDaily('2026-10-${d.toString().padLeft(2, '0')}', r);
-    }
-    expect(a.dailyReplay('2026-10-01'), isNull); // 直近7日だけ
-    expect(a.dailyReplay('2026-10-10'), isNotNull);
-  });
-
-  test('毎日のバトルの連続記録: 続けると増え、空くと戻り、端末に保存される。復習の重みは間違えた州が重い', () async {
-    final a = await AppState.load();
-    final r = botReplay(a, 'DE-BY', Difficulty.easy);
     a.today = () => '2026-10-02';
     expect(a.streak.currentOn(a.today()), 0);
-    await a.saveDaily('2026-10-01', r);
-    await a.saveDaily('2026-10-02', r);
+    a.today = () => '2026-10-01';
+    await a.recordBattleDay();
+    a.today = () => '2026-10-02';
+    await a.recordBattleDay();
     expect(a.streak.currentOn('2026-10-02'), 2);
     expect((await AppState.load()).streak.current, 2); // 再起動しても残る
     expect(a.streak.currentOn('2026-10-05'), 0); // 2日以上空くと0
@@ -248,33 +241,74 @@ void main() {
     expect(w['DE-HH']! > w['DE-BE']!, true); // 未習得 > 習得済み
   });
 
-  testWidgets('今日のバトル: 選択画面に出て、始められる。終えた日は完了になる。無料の間は無料の州から選ぶ', (t) async {
+  testWidgets('今日のバトルはない。選択画面は地図が初期で、難易度の切り替えは地図では出ない', (t) async {
     await t.binding.setSurfaceSize(const Size(360, 1000));
     addTearDown(() => t.binding.setSurfaceSize(null));
     final app = await boot(t, assist: false);
-    app.today = () => '2026-10-18';
-    final d = DailyBattle.forDate(app.pack, '2026-10-18', allowedIds: freeRegionIds);
-    expect(freeRegionIds, contains(d.stageId));
     await t.tap(find.byKey(const ValueKey('battle')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
-    expect(find.text('Daily Battle'), findsOneWidget);
-    await t.tap(find.byKey(const ValueKey('daily-battle')));
+    expect(find.byKey(const ValueKey('daily-battle')), findsNothing);
+    expect(find.text('Daily Battle'), findsNothing);
+    expect(find.byKey(const ValueKey('stage-map')), findsOneWidget);
+    expect(find.byKey(const ValueKey('clear-legend')), findsWidgets); // ホームの下にも同じ凡例がある
+    expect(find.byType(SegmentedButton<Difficulty>), findsNothing);
+    expect(app.pack.regions, isNotEmpty);
+  });
+
+  testWidgets('地図で州を選ぶ: 無料の州をタップすると難易度の選択が出て、押すとその難易度で始まる。無料でない州は購入の案内', (t) async {
+    await t.binding.setSurfaceSize(const Size(800, 1400));
+    addTearDown(() => t.binding.setSurfaceSize(null));
+    await boot(t, assist: false);
+    await t.tap(find.byKey(const ValueKey('battle')));
+    await t.pump();
+    await t.pump(const Duration(milliseconds: 400));
+    final map = t.widget<RegionMapView>(find.byKey(const ValueKey('stage-map')));
+    map.onTap!('DE-HH'); // 無料でない州
+    await t.pumpAndSettle();
+    expect(find.text('Unlock all 16 states'), findsWidgets);
+    expect(find.byKey(const ValueKey('stage-sheet-title')), findsNothing);
+    Navigator.of(t.element(find.text('Unlock all 16 states').first)).pop();
+    await t.pumpAndSettle();
+
+    map.onTap!('DE-BY');
+    await t.pumpAndSettle();
+    expect(find.byKey(const ValueKey('stage-sheet-title')), findsOneWidget);
+    expect(find.text('Bavaria'), findsWidgets);
+    for (final d in Difficulty.values) {
+      expect(find.byKey(ValueKey('play-DE-BY-${d.name}')), findsOneWidget);
+    }
+    await t.tap(find.byKey(const ValueKey('play-DE-BY-hard')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
     expect(find.byKey(const ValueKey('hud-wave')), findsOneWidget);
-    Navigator.of(t.element(find.byKey(const ValueKey('hud-wave')))).pop();
-    await t.pump();
-    await t.pump(const Duration(milliseconds: 400));
+  });
 
-    await t.runAsync(() => app.saveDaily('2026-10-18', botReplay(app, d.stageId, d.difficulty)));
+  testWidgets('地図の色: 初めは薄い灰色。クリアした一番むずかしい難易度の色になる。クイズで覚えても変わらない', (t) async {
+    final app = await boot(t, assist: false);
+    RegionMapView map() => t.widget<RegionMapView>(find.byType(RegionMapView));
+    expect(map().colorOf('DE-BY'), A11yPalette.clearColor(null));
+    await t.runAsync(() => app.record('DE-BY', correct: true)); // クイズで覚えた
     await t.pump();
-    expect(find.text('You finished today\'s battle.', findRichText: false, skipOffstage: false), findsNothing); // 文は「完了 + 結果」と続くので部分一致で確かめる
-    expect(find.textContaining('You finished today'), findsOneWidget);
+    expect(map().colorOf('DE-BY'), A11yPalette.clearColor(null)); // 色は変わらない
+    await t.runAsync(() => app.recordBattleClear(StageKind.normal, 'DE-BY', Difficulty.easy));
+    await t.pump();
+    expect(map().colorOf('DE-BY'), A11yPalette.clearColor(Difficulty.easy));
+    await t.runAsync(() => app.recordBattleClear(StageKind.normal, 'DE-BY', Difficulty.hard));
+    await t.runAsync(() => app.recordBattleClear(StageKind.normal, 'DE-BY', Difficulty.normal));
+    await t.pump();
+    expect(app.bestClear('DE-BY'), Difficulty.hard);
+    expect(map().colorOf('DE-BY'), A11yPalette.clearColor(Difficulty.hard));
+    expect({for (final d in [null, ...Difficulty.values]) A11yPalette.clearColor(d)}.length, 4); // 4つとも違う色
+    expect(find.byKey(const ValueKey('clear-legend')), findsOneWidget);
+  });
 
-    // 終えた日は、タップするとリプレイを見られる。最後まで飛ばすと、記録と一致したと出る
-    await t.pump(const Duration(seconds: 1));
-    await t.tap(find.byKey(const ValueKey('daily-battle')));
+  testWidgets('リプレイ: 最後まで飛ばすと、記録と一致したと出る。やり直せる', (t) async {
+    await t.binding.setSurfaceSize(const Size(360, 1000));
+    addTearDown(() => t.binding.setSurfaceSize(null));
+    final app = await boot(t, assist: false);
+    final r = botReplay(app, 'DE-BY', Difficulty.easy);
+    await t.pumpWidget(MaterialApp(home: ReplayScreen(app: app, replay: r)));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
     expect(find.byKey(const ValueKey('replay-board')), findsOneWidget);
@@ -385,6 +419,8 @@ void main() {
     await t.tap(find.byKey(const ValueKey('battle')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
+    await t.tap(find.byKey(const ValueKey('stage-view-toggle')));
+    await t.pump();
     await t.longPress(find.byKey(const ValueKey('stage-DE-BY')));
     await t.pump();
     expect(copied, contains('TMI1.${app.pack.packId}.normal.DE-BY.normal'));
@@ -588,6 +624,8 @@ void main() {
     await t.tap(find.byKey(const ValueKey('battle')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
+    await t.tap(find.byKey(const ValueKey('stage-view-toggle')));
+    await t.pump();
     await t.tap(find.byKey(const ValueKey('stage-DE-HH')));
     await t.pump();
     await t.pump(const Duration(milliseconds: 400));
