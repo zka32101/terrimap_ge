@@ -89,7 +89,7 @@ class _BattleScreenState extends State<BattleScreen> with SingleTickerProviderSt
         if (mounted) showStoryLines(context, widget.app, title: ch.title.of(widget.app.lang), lines: ch.intro);
       });
     }
-    widget.app.art(bossId: _stage.extraId).then((a) {
+    widget.app.art(bossId: _stage.extraId, stage: _stage).then((a) {
       if (mounted) setState(() => _art = a);
     });
   }
